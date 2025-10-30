@@ -41,8 +41,6 @@ public class Clase_20102025 {
             3) ver el menor de 1500 numeros 
             4) calcular el exponente 
             5) salir 
-        
-
          */
         int opcion = 0;
         do {
@@ -61,8 +59,8 @@ public class Clase_20102025 {
                 // el codigo funciona solamente para 3 numeros 
                 // repite demasiado codigo -> normalmente cuando vemos que hay mucho que se repite, puede ser un indicativo de que podemos mejorarlo
 
-//                System.out.println("Sumando 3 numeros");
-//                
+                System.out.println("Sumando 3 numeros");
+
 //                System.out.println("Ingrese el primer numero");
 //                int numero1= entrada.nextInt();
 //                
@@ -73,11 +71,11 @@ public class Clase_20102025 {
 //                int numero3 = entrada.nextInt();
 //                System.out.println("Ingrese el tercer numero");
 //                int numero3 = entrada.nextInt();
-//                
 //                int resultado = numero1+numero2+numero3;
+                // contadoras, acumuladoras, banderas
                 int numeroContador = 1;
                 int resultadoAcumulador = 0;
-                // contadoras, acumuladoras, banderas
+
                 while (numeroContador <= 3) {
                     System.out.println("Ingrese un numero");
                     int numeroLeer = entrada.nextInt();
@@ -88,30 +86,63 @@ public class Clase_20102025 {
                     // Acumulamos los valores que hemos ido leyendo
 //                  resultadoAcumulador+=numeroLeer;
                     resultadoAcumulador = resultadoAcumulador + numeroLeer;
-                }
+                } // fin del while 
+                System.out.println("El resu;tado es: " + resultadoAcumulador);
 
-            } else if (opcion == 1) {
+            } else if (opcion == 2) {
+                System.out.println("Mayor de 8 numeros");
+                int contadorNumeros = 0;
+                int numeroMayor = 0;
+
+                while (contadorNumeros < 8) {
+                    System.out.println("Ingrese un numero");
+                    int numeroComparar = entrada.nextInt();
+                    if (numeroComparar >= numeroMayor) {
+                        numeroMayor = numeroComparar;
+                    } // fin del if
+                    contadorNumeros++;
+                } // fin del while 
+                System.out.println("El numero mayor es: " + numeroMayor);
             } else if (opcion == 3) {
+                System.out.println("Ver el menor de 1500 numeros");
+                int contadorNumeros = 0;
+                int numeroMenor=0;
+                /*
+                1 ) Iniciar numeroMenor con un valor muy grande 
+                2) agregar una validacion 
+                */
+                while (contadorNumeros < 3) {
+                    System.out.println("Ingrese un numero");
+                    int numeroComparar = entrada.nextInt();
+     
+                    if (numeroComparar <= numeroMenor) {
+                        numeroMenor = numeroComparar;
+                    } // fin del if
+                    contadorNumeros++;
+                } // fin del while 
+                System.out.println("El numero menor es: " + numeroMenor);
             } else if (opcion == 4) {
-
+                    System.out.println("Exponentes");
+                    System.out.println("Ingrese el valor base");
+                    int base = entrada.nextInt();
+                    
+                    //Validar 
+                    while (base<0) {
+                        System.out.println("El valor es incorrecto, ingrese un valor positivo");
+                         System.out.println("Ingrese el valor base");
+                          base = entrada.nextInt();
+                    }// fin del while
+                    
+                    System.out.println("El valor es incorrecto ");
+                    System.out.println("Ingrese el exponente");
+                    int exp = entrada.nextInt();
+     
             } else {
 
-            }
+            }// fin del if menu 
 
         } while (opcion != 5);
 
-        if (numero < 7) {
-        } else {
+    }// fin del main 
 
-        }
-
-        if (numero < 7) {
-
-        }
-        else if (numero > 7) {
-
-        }
-
-    }
-
-}
+}// fin de la clase 
