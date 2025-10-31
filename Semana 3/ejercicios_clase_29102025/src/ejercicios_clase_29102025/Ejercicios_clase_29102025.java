@@ -4,6 +4,8 @@
  */
 package ejercicios_clase_29102025;
 
+import java.util.Scanner;
+
 /**
  *
  * @author claudiacortes
@@ -55,7 +57,27 @@ public class Ejercicios_clase_29102025 {
                  -> 3, 2
                  *  *  *
                  *  *  *
-        */
+         */
+
+        Scanner entrada = new Scanner(System.in);
+        //Pendiente: agregar validaciones
+        System.out.println("Ingrese el tamano");
+        int lado = entrada.nextInt();
+
+        // dibujar una linea 
+        for (int i = 0; i < lado; i++) {
+            /*
+               for (int j = 0; j < lado-1; j++) {
+                System.out.print(" * ");
+            }
+            System.out.println(" * ");
+            */
+            for (int j = 0; j < lado; j++) {
+                System.out.print(" * ");
+            }
+            System.out.println("");
+
+        }
     }
-    
+
 }
