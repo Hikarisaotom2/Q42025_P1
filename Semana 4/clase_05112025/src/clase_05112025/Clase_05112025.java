@@ -58,8 +58,7 @@ public class Clase_05112025 {
             
             if(posEncontro!=-1){
                 System.out.println("Felicidades, encontro una letra");
-                // _ _ _ _ 
-                // H _ _ A
+                
 
             }else{
                 System.out.println("Error, el valor no existe!");
