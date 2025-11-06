@@ -41,11 +41,11 @@ public class Clase_05112025 {
         Scanner entrada = new Scanner(System.in);
         int vidas = 5;
         boolean ganamos = false;
-        String secreto = "Jueves hola mundo";
+        String secreto = "Jueves";
         String adivinar = "";
         
         for (int i = 0; i < secreto.length(); i++) {
-                adivinar+= "_ ";
+                adivinar+= "_";
         }
         
         while (vidas>0 || ganamos) {
@@ -58,17 +58,22 @@ public class Clase_05112025 {
             
             if(posEncontro!=-1){
                 System.out.println("Felicidades, encontro una letra");
-                
-
+                // 2) construir una nueva cadena que se parece a lo que necesitamos
+                String cadenaTemporal = "";
+                for (int i = 0; i < secreto.length(); i++) {
+                    if(valor==secreto.charAt(i)){
+                       cadenaTemporal+=valor;
+                    }else{
+                       cadenaTemporal+=adivinar.charAt(i);
+                    }// fin del if 
+                }// fin del for
+                adivinar = cadenaTemporal;
             }else{
                 System.out.println("Error, el valor no existe!");
                 vidas--;
-            }
+            }// fin del if 
             
-            
-            
-            
-        }
-    }
+        }// fin del while 
+    }// fin del for 
     
-}
+}// fin de la clase 
