@@ -16,7 +16,6 @@ public class Clase_12112025 {
         int continuar=0;
          Scanner entrada = new Scanner(System.in);
         while (continuar!=1) {
-             
               System.out.println("Ingrese su opcion");
               int op = entrada.nextInt();
               if(op==1){
