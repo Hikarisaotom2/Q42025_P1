@@ -16,37 +16,6 @@ public class Clase_17112025 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*
-    Implementa un programa que tome una cadena, encuentre una palabra específica y la
-    reemplace por otra palabra dada. 
-        
-    No puede utilizar string replace() method. 
-    Debe crear un método String WordReplace (String cadena, String search, String replace) 
-        
-    que reciba la cadena ingresada por el usuario, la cadena a buscar en la misma, y la cadena a reemplazar 
-    y se retorna la cadena modificada.
-    Para el caso, en que no se encontró en la cadena la palabra buscada,
-    pueden retornar una cadena vacia (return “”;) y hacer la validación de la misma para las salidas.
-        
-    Ejemplos:
-    Ingrese cadena: badbicho
-    Ingrese palabra a buscar: bicho
-    Ingrese palabra a reemplazar: bunny
-    La cadena sí contiene la palabra “bicho”
-    Cadena modificada: badbunny
-        
-    Ingrese cadena: badbicho
-    Ingrese palabra a buscar: drake
-    Ingrese palabra a reemplazar: bunny
-    La cadena no contiene la palabra “drake”
-         */
-
- /*
-        -> badbicho
-        -> bicho
-       
-        
-         */
         Scanner entrada = new Scanner(System.in);
         System.out.println("ingrese cadena: ");
         String cadena = entrada.nextLine();
