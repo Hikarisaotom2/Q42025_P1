@@ -40,13 +40,13 @@ public class Clase_17112025 {
     Ingrese palabra a reemplazar: bunny
     La cadena no contiene la palabra “drake”
          */
-        
-        /*
+
+ /*
         -> badbicho
         -> bicho
        
         
-        */
+         */
         Scanner entrada = new Scanner(System.in);
         System.out.println("ingrese cadena: ");
         String cadena = entrada.nextLine();
@@ -54,33 +54,41 @@ public class Clase_17112025 {
         String buscar = entrada.nextLine();
         System.out.println("Ingrese palabra a reemplazar");
         String replace = entrada.nextLine();
-        WordReplace(cadena,buscar,replace);
-        
+        String nuevaCadena = WordReplace(cadena, buscar, replace);
+        System.out.println("La nueva cadena es " + nuevaCadena);
+
     }// fin del main 
-    /*
-    HolaMundo
-    -> ola
-    
-    -> H
-        H equals ola
-    -> Ho
-        Ho equals ola
-    ->Hol
-        Hol equals ola
-    */
-    public static String WordReplace (String cadena, String search, String replace) {
+
+    public static String WordReplace(String cadena, String search, String replace) {
         String cadenaTemporal = "";
+        int inicio = -1;
+        int fin = -1;
+        String cadenaFinal = "";
         for (int i = 0; i < cadena.length(); i++) { // recorre la variable cadena
             char caracterComparar = cadena.charAt(i);
             cadenaTemporal = "";
             for (int j = i; j < cadena.length(); j++) {// recorrer el resto de la variable cadena despues de la legtra que estamos evaluando en el momento
                 cadenaTemporal = cadenaTemporal + cadena.charAt(j);
-                if(cadenaTemporal.equalsIgnoreCase(search)){
-                    System.out.println("Encontramos la palabra");
-                }
+                if (cadenaTemporal.equalsIgnoreCase(search)) {
+                    inicio = i;
+                    fin = j;
+                }// fin del if 
             }// fin del for pequeno 
-        }
-        return "";
+        }// fin del for 
+
+        if (inicio != -1 && fin != -1) { //encontramos la cadena
+            // nota: podemos intentar realizando esto con un substring
+            for (int i = 0; i < cadena.length(); i++) {
+                char caracterActual = cadena.charAt(i);
+                if (i < inicio || i > fin) {
+                    cadenaFinal += caracterActual;
+                } else if (i == inicio) {
+                    cadenaFinal += replace;
+                }// fin del if 
+            }// fin del for 
+        }// fin del if 
+
+        return cadenaFinal;
     }// fin del metodo 
 
 }// fin de la clase 
