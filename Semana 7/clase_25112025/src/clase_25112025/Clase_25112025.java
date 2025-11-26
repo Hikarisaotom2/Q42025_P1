@@ -48,6 +48,21 @@ public class Clase_25112025 {
 
         // 4) Recorrer una matriz 
             // tamano de las filas? tamano de las columnas? 
+//            int filas = tablero.length;
+//            int columnas = tablero[0].length;
+            
+//            for (int i = 0; i < filas; i++) { // recorre las filas 
+//                for (int j = 0; j < columnas; j++) { //recorre las columnas
+//                    
+//                }// fin del segundo for 
+//        }// fin del for 
+        System.out.println("La matriz tablero");
+        for (int i = 0; i < tablero.length; i++) { // recorrer las filas 
+            for (int j = 0; j < tablero[i].length; j++) { // recorrer las columnas en la fila i
+                System.out.print("["+tablero[i][j]+"] ");
+            }// fin del for 
+            System.out.println("");
+        }// fin del for 
         
     }
     
