@@ -4,6 +4,8 @@
  */
 package clase_26112025;
 
+import java.util.Scanner;
+
 /**
  *
  * @author claudiacortes
@@ -13,6 +15,10 @@ public class Clase_26112025 {
     /**
      * @param args the command line arguments
      */
+    //Variables globales
+    public static int filaActualJugador =  -1;
+    public static int columnaActualJugador = -1;
+    
     public static void main(String[] args) {
         /*
         Laberinto:
@@ -25,7 +31,13 @@ public class Clase_26112025 {
          */
         String[][] tablero = new String[5][5];
         tablero = GenerarTableroInicial(tablero);
-        ImprimirTablero(tablero);
+        
+        
+        while (true) {
+              ImprimirTablero(tablero);
+              tablero = LeerValidarMovimiento(tablero);
+        }
+      
 
     }// fin del main 
 
@@ -52,7 +64,9 @@ public class Clase_26112025 {
         tablero[2][2] = " * ";
         tablero[3][0] = " * ";
         tablero[3][1] = " * ";
-        tablero[3][2] = " X ";
+        tablero[3][2] = " x ";
+        filaActualJugador = 3;
+        columnaActualJugador = 2;
         return tablero;
     }// fin del metodo
 
@@ -65,5 +79,64 @@ public class Clase_26112025 {
         }// fin del for 
         System.out.println("");
     }// fin del tablero 
-
-}
+    
+    public static String[][] LeerValidarMovimiento(String [][] tablero){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese la dirección a la que desea moverse: ");
+        System.out.println("1) Izquierda");
+        System.out.println("2) Derecha ");
+        System.out.println("3) Arriba");
+        System.out.println("4) Abajo");
+        int pos = entrada.nextInt();
+        switch (pos) {
+            case 1 ->{ //Izquierda, col
+                String valor = tablero[filaActualJugador][columnaActualJugador-1];
+                if(valor.equals("   ")){ // el espacio esta vacio, podemos movernos
+                     tablero[filaActualJugador][columnaActualJugador] = "   ";
+//                  columnaActualJugador =columnaActualJugador-1;
+                  columnaActualJugador--;
+// .                columnaActualJugador-=1;
+                    tablero[filaActualJugador][columnaActualJugador] = " x ";
+                    System.out.println("AVANZANDO CON EXITO!");
+                    
+                }else{ // el espacio esta ocupado
+                    System.out.println("Movimiento invalido.....");
+                }
+            }
+            
+            case 2 ->{// Derecha, col
+                 String valor = tablero[filaActualJugador][columnaActualJugador+1];
+                if(valor.equals("   ")){ // el espacio esta vacio, podemos movernos
+                    tablero[filaActualJugador][columnaActualJugador] = "   ";
+                     columnaActualJugador++;
+                    tablero[filaActualJugador][columnaActualJugador] = " x ";
+                    System.out.println("AVANZANDO CON EXITO!");
+                }else{ // el espacio esta ocupado
+                    System.out.println("Movimiento invalido.....");
+                }
+            }
+            
+            case 3 ->{ // Arriba, fila 
+                /*
+                Pendiente para trabajo en clase: 
+                1)completar los movimientos de arriba, abajo 
+                2)agregar validaciones para no permitir movimientos fuera del tablero 
+                3) verificar si el usuario gano
+                */
+            }
+            
+            case 4 ->{// Abajo, fila 
+                
+            }
+            
+            default ->{
+                
+                
+            }
+        }// fin del switch 
+        
+        return tablero;
+        
+    }// fin del metodo 
+    
+}// fin de la clase 
